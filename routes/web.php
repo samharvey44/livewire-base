@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
 
@@ -14,4 +15,13 @@ use App\Livewire\Login;
 |
 */
 
-Route::get('/login', Login::class);
+Route::get('/login', Login::class)->name('login');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/home', Home::class)->name('home');
+});
+
+Route::get(
+    '/{any?}',
+    fn () => auth()->check() ? abort(404) : redirect()->to(route('login'))
+);

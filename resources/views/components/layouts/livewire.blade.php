@@ -11,9 +11,9 @@
 
         @livewireStyles
     </head>
-    
-    <body>
-        <div class="container-fluid p-3">
+
+    <body class="overflow-hidden">
+        <div class="container-fluid p-3 vh-100">
             {{ $slot }}
         </div>
         
