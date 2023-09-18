@@ -17,7 +17,7 @@
             {{ $slot }}
         </div>
 
-        <script src="{{ mix('build/js/app.js') }}" defer></script>
+        <script src="{{ mix('build/js/app.js') }}"></script>
 
         @livewireScripts
         @stack('scripts')
