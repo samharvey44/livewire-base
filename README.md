@@ -31,6 +31,14 @@ Please check the official Laravel installation guide for server requirements bef
 
     php artisan migrate
 
+#### Install Node Dependencies
+
+    npm install
+
+#### Build Assets
+
+    npm run dev
+
 #### Start a Local Development Server
 
     php artisan serve

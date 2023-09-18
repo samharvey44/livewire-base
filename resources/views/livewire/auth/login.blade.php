@@ -1,5 +1,5 @@
 @push('styles')
-    <link rel="stylesheet" type="text/css" href="{{ mix('build/css/auth/login.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ mix('build/css/auth/login.css') }}">
 @endpush
 
 <div class="mt-5">

@@ -6,7 +6,7 @@
 
         <title>{{ config('app.name') }}</title>
 
-        <link rel="stylesheet" href="{{ mix('build/css/app.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ mix('build/css/app.css') }}">
 
         @livewireStyles
         @stack('styles')
@@ -17,7 +17,7 @@
             {{ $slot }}
         </div>
 
-        <script src="{{ mix('build/js/app.js') }}"></script>
+        <script type="text/javascript" src="{{ mix('build/js/app.js') }}"></script>
 
         @livewireScripts
         @stack('scripts')
