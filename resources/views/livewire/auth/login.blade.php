@@ -15,17 +15,34 @@
 
             <form wire:submit="login">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input class="form-control" placeholder="Enter your username..." id="username" name="username" wire:model="username">
+                    <label for="email" class="form-label">Email</label>
+                    <input class="form-control" placeholder="Enter your email..." id="email" name="email" wire:model="email">
+
+                    @error('email')
+                        <div class="text-danger mt-1">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input class="form-control" placeholder="Enter your password..." id="password" name="password" type="password" wire:model="password">
+
+                    @error('password')
+                        <div class="text-danger mt-1">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
 
                 <div>
-                    <label for="password" class="form-label">Password</label>
-                    <input class="form-control" placeholder="Enter your password..." id="password" name="password" wire:model="password">
+                    <input class="form-check-input" id="remember" name="remember" type="checkbox" wire:model="remember">
+                    <label for="remember" class="form-check-label">Remember Me?</label>
                 </div>
 
                 <div class="mt-4 d-flex">
-                    <button class="btn btn-primary ms-auto">Submit</button>
+                    <button class="btn btn-primary ms-auto"><i class="bi bi-box-arrow-in-right"></i> Submit</button>
                 </div>
             </form>
         </div>

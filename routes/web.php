@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LogoutController;
 use App\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Login;
@@ -15,13 +16,18 @@ use App\Livewire\Login;
 |
 */
 
-Route::get('/login', Login::class)->name('login');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', Login::class)->name('login');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', Home::class)->name('home');
+    Route::match(['GET', 'POST'], '/logout', LogoutController::class)->name('logout');
 });
 
 Route::get(
-    '/{any?}',
-    fn () => auth()->check() ? abort(404) : redirect()->to(route('login'))
+    '/{any}',
+    fn () => auth()->check() ? abort(404) : redirect()->route('login')
 );
+
+Route::get('/', fn () => redirect()->route(auth()->check() ? 'home' : 'login'));
