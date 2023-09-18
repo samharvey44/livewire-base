@@ -6,17 +6,19 @@
 
         <title>{{ config('app.name') }}</title>
 
-        @vite(['resources/css/app.scss', 'resources/js/app.js'])
-        {{ $vite ?? '' }}
+        <link rel="stylesheet" href="{{ mix('build/css/app.css') }}">
 
         @livewireStyles
+        @stack('styles')
     </head>
 
     <body class="overflow-hidden">
         <div class="container-fluid p-3 vh-100">
             {{ $slot }}
         </div>
-        
+
+        <script src="{{ mix('build/js/app.js') }}" defer></script>
         @livewireScripts
+        @stack('scripts')
     </body>
 </html>

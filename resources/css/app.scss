@@ -1,6 +1,10 @@
 @import "bootstrap/scss/bootstrap";
 @import "bootstrap-icons/font/bootstrap-icons";
 
+html {
+    background-color: #F8F8FF;
+}
+
 .vh-100 {
     height: 100vh !important;
 }
