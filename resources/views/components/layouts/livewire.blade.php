@@ -18,6 +18,7 @@
         </div>
 
         <script src="{{ mix('build/js/app.js') }}" defer></script>
+
         @livewireScripts
         @stack('scripts')
     </body>
