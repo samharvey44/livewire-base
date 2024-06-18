@@ -15,7 +15,7 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.67.0",
         "sass-loader": "^13.3.2",
-        "webpack": "^5.88.2"
+        "webpack": "^5.92.0"
     },
     "dependencies": {
         "bootstrap": "^5.3.1",
